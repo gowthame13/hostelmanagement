@@ -1,0 +1,139 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="login.css"/>
+<script type="text/javascript">
+function clicked() {
+    alert('Successfully submitted');
+}
+
+    $("#formname").resetForm();
+</script>
+</head>
+<body>
+<div id="holder"><img src="images/22.jpg" width="200px" height="100px"/></a>
+     <div id="header">
+     
+   <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="overview.html">Overview</a></li>
+        
+        <li><a href="book.html">Booking</a></li>
+        <li><a href="index.html">Home</a></li>
+        </ul>
+    </div><!--header -->
+<div id="login">
+<br>
+    <h1> Login</h1>
+        <div id="p"><br><br><br>
+    <section>
+        <form class="container">
+                        <center><span>SIGN-UP</span></center>
+                        <center>
+                        <table>
+                            </center>
+
+<tr>
+<td><br></td>
+</tr>
+<tr>
+<td>
+Username : </td>
+<td>
+<input type="text" id="Username" required></td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err1" class="errormessage"></span><br></td>
+</tr>
+<tr>
+<td> Email Id: </td>
+<td><input type="email" name="email" id="email" required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err2" class="errormessage"></span><br></td>
+</tr>
+<tr>
+<td> Password: </td>
+<td><input type="password" name="passwords" id="passwords" required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err3" class="errormessage"></span><br></td>
+</tr>
+<tr>
+<td> Confirm Password: </td>
+<td><input type="password" name="cnpasswords" id="cnpasswords" required>
+</td>
+</tr>
+    <tr>
+<td colspan="2" ><span id="err4" class="errormessage"><br></span></td>
+</tr>
+<tr>
+<td><br></td>
+</tr>
+<tr>
+<td colspan="2" > <center><input class="a_sub" type="submit" value="Sign Up" id="btnsubmit" ></td>
+</tr>
+<tr>
+<td colspan="2" class="logintext"><p>Already have a account ?<a href="login.html" class="p_d2">Login here</a></p></center></td>
+</tr>
+</table>   
+                    
+                    </form>
+
+    </section> 
+
+    <script>
+    var btns=document.getElementById('btnsubmit');
+    btns.onclick=function(e){
+        val();
+       var b=passwordcheck();
+        {
+            e.preventDefault();
+        }
+    };
+    
+    function val()
+    {
+        var name=document.getElementById('Username');
+        var email=document.getElementById('email');
+        var pass=document.getElementById('passwords');
+        var conpass=document.getElementById('cnpasswords');
+        if(name.checkValidity)
+            {
+                document.getElementById('err1').innerHTML=name.validationMessage;
+            }
+        if(email.checkValidity)
+            {
+                document.getElementById('err2').innerHTML=email.validationMessage;
+            }
+        if(pass.checkValidity)
+            {
+                document.getElementById('err3').innerHTML=pass.validationMessage;
+            }
+        if(conpass.checkValidity)
+            {
+                document.getElementById('err4').innerHTML=conpass.validationMessage;
+            }        
+    }
+        function passwordcheck()
+        {
+            var pass=document.getElementById('passwords');
+        var conpass=document.getElementById('cnpasswords');
+            if(pass.value!=conpass.value){
+            document.getElementById('err4').innerHTML="Password does not match";
+            return false;
+        }
+        else{
+            return true;
+        }
+        }
+    
+    </script>
+        </div><!--p-->
+</div><!--login-->
+</div><!--holder-->
+</body>
+</html>
